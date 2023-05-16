@@ -59,3 +59,9 @@ Create migration
 ```shell
  npm run dev:migration:generate --name="init"
 ```
+
+## Prisma
+
+```shell
+npx prisma migrate dev --name init
+```
