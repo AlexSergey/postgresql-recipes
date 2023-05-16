@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { configService } from './config/config.service';
-import { ItemModule } from './item/item.module';
+import { MovieModule } from './movie/movie.module';
 
 @Module({
-  imports: [TypeOrmModule.forRoot(configService.getTypeOrmConfig()), ItemModule],
+  imports: [TypeOrmModule.forRoot(configService.getTypeOrmConfig()), MovieModule],
   controllers: [],
   providers: [],
 })

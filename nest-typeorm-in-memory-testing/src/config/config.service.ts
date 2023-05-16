@@ -3,6 +3,8 @@ import { config } from 'dotenv';
 import { join } from 'node:path';
 
 config();
+
+const root = join(__dirname, '..', '..');
 class ConfigService {
   constructor(private env: { [k: string]: string | undefined }) {}
 
@@ -40,8 +42,8 @@ class ConfigService {
       database: this.getValue('POSTGRES_DATABASE'),
       logging: true,
       synchronize: true,
-      entities: [join(__dirname, '..', '**', '*.entity.{ts,js}')],
-      migrations: ['src/migration/*.ts'],
+      entities: [join(root, 'src', '**', '*.entity.{ts,js}')],
+      migrations: [join(root, 'migrations', '*.ts')],
       ssl: this.isProduction(),
     };
   }
